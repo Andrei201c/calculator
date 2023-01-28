@@ -5,6 +5,10 @@ const display = document.querySelector(".display");
 
 keys.addEventListener('click', e => {
     if(e.target.matches('button')) {
+
+        if(display == 12) {
+            
+        }
         
         const key = e.target;
         const  action = key.dataset.action;
@@ -27,6 +31,9 @@ keys.addEventListener('click', e => {
         }
         
         if(!action) {
+            if(displayedNum.length > 11) {
+                displayedNum = "Err"
+            }
            if(displayedNum === '0' || previousKeyType === 'operator' || 
            previousKeyType === 'calculate') {
                display.textContent = keyContent;
